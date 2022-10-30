@@ -1,3 +1,5 @@
-export default defineEventHandler(() => (
-    ['1']
-))
+// import stories, { addStory } from "~~/api/story"
+
+export default defineEventHandler(async () => {
+    return []
+})

@@ -1,9 +1,8 @@
 <script lang="ts" setup>
-const stories = await useFetch('/api/top')
-
-console.log(stories)
+// new
+const newStories = await $fetch('/api/new')
 </script>
 
 <template>
-
+    <Stories :stories="newStories"></Stories>
 </template>

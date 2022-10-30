@@ -11,5 +11,15 @@ useHead({
 </script>
 
 <template>
-	<NuxtPage />
+	<Header></Header>
+	<main>
+		<NuxtPage />
+	</main>
 </template>
+
+<style>
+body {
+	margin-left: 20%;
+	margin-right: 20%;
+}
+</style>
