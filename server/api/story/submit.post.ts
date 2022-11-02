@@ -1,7 +1,7 @@
-import { createStory } from "~~/api/story"
+// import { createStory } from "~~/api/story"
 
-export default defineEventHandler(async (event) => {
-    const body = await useBody(event)
+// export default defineEventHandler(async (event) => {
+//     const body = await useBody(event)
 
-    return await createStory(body)
-})
+//     return await createStory(body)
+// })

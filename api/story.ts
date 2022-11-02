@@ -1,14 +1,12 @@
 import { processDirectus } from "./process"
+import { db } from "~~/api/db"
 
-export const getStoryById = async (id: number) => processDirectus(await $fetch(`https://amppkkl7.directus.app/items/story/${id}`))
-export const getNewStories = async (limit: number, offset: number) => processDirectus(
-    await $fetch(
-        `https://amppkkl7.directus.app/items/story?sort=-date_created&limit=${limit}&offset=${offset}`
-    )
+export const getNewStories = async (limit: number, offset: number) => (
+    processDirectus(await (await db()).items('story').readByQuery({
+        sort: ['-date_created'] as any
+    }))
 )
-export const createStory = async (story) => (
-    await $fetch(`https://amppkkl7.directus.app/items/story`, {
-        method: 'post',
-        body: JSON.stringify(story)
-    })
-)
+
+export const getStoryById = async (id: number) => {
+    processDirectus(await (await db()).items('story').readOne(id))
+}
